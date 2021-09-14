@@ -23,8 +23,7 @@ const RecordView = () => {
                 <button onClick={stopRecording} className="p-2 border border-gray-500 rounded">Stop Recording</button>
               </div>
               <video src={mediaBlobUrl} controls autoPlay />
-              {/* <video src={previewStream} controls autoPlay /> */}
-              {/* <video ref={previewStream} width={500} height={500} autoPlay controls /> */}
+              <video src={previewStream} width={500} height={500} autoPlay controls />
             </div>
           )}
         />
