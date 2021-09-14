@@ -27,7 +27,8 @@ const RecordView = () => {
             type: "video/mp4"
          }}
          askPermissionOnMount={true}
-          render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
+         facingMode="environment"
+          render={({ status, startRecording, stopRecording, mediaBlobUrl, previewStream }) => (
             <div>
               <p>status: {status}</p>
               <div className="grid grid-cols-2 gap-2 my-4">
@@ -35,17 +36,10 @@ const RecordView = () => {
                 <button onClick={stopRecording} className="p-2 border border-gray-500 rounded">Stop Recording</button>
               </div>
               <video src={mediaBlobUrl} controls autoPlay />
+              <video ref={previewStream} width={500} height={500} autoPlay controls />
             </div>
           )}
         />
-     </div>
-     <div className="border-2">
-        <ReactMediaRecorder
-      video
-      render={({ previewStream }) => {
-        return <VideoPreview stream={previewStream} />;
-      }}
-    />
      </div>
    </div>
   );
