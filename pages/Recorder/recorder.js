@@ -14,6 +14,7 @@ const RecordView = () => {
          }}
          askPermissionOnMount={true}
          mediaRecorderOptions={{facingMode: "environment"}}
+         mediaTrackOptions={{facingMode: "environment"}}
          mediaTrackCapabilities={{facingMode: "environment"}}
          videoFacingMode="environment"
           render={({ status, startRecording, stopRecording, mediaBlobUrl, previewStream }) => (
