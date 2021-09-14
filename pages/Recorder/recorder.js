@@ -14,7 +14,8 @@ const RecordView = () => {
          }}
          askPermissionOnMount={true}
          mediaRecorderOptions={{facingMode: "environment"}}
-         facingMode="environment"
+         mediaTrackCapabilities={{facingMode: "environment"}}
+         videoFacingMode="environment"
           render={({ status, startRecording, stopRecording, mediaBlobUrl, previewStream }) => (
             <div>
               <p>status: {status}</p>
@@ -22,8 +23,10 @@ const RecordView = () => {
                 <button onClick={startRecording} className="p-2 border border-gray-500 rounded">Start Recording</button>
                 <button onClick={stopRecording} className="p-2 border border-gray-500 rounded">Stop Recording</button>
               </div>
-              <video src={mediaBlobUrl} controls autoPlay />
+              <p>preview</p>
               <video src={previewStream} width={500} height={500} autoPlay controls />
+              <p>blob</p>
+              <video src={mediaBlobUrl} controls autoPlay />
             </div>
           )}
         />
