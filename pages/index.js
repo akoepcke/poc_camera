@@ -48,7 +48,7 @@ export default function Home() {
               </button>
             </div>
             <label
-              className="flex items-center justify-center px-4 py-6 text-center text-purple-600 bg-white border rounded-md shadow-md cursor-pointer border-blue hover:bg-purple-600 hover:text-white">
+              className="flex items-center justify-center px-4 py-6 text-center text-blue-700 bg-blue-300 border rounded-md shadow-md cursor-pointer border-blue hover:bg-blue-800 hover:text-white">
               <div className="text-base leading-normal">Take a video</div>
               <input type="file" id="video-file" capture="environment" accept="video/*" className="hidden" value={video} onChange={(e)=>{
                 console.log(e.target.files[0])
@@ -99,7 +99,7 @@ export default function Home() {
               </button>
             </div>
             <label
-              className="flex items-center justify-center px-4 py-6 text-center text-purple-600 bg-white border rounded-md shadow-md cursor-pointer border-blue hover:bg-purple-600 hover:text-white">
+              className="flex items-center justify-center px-4 py-6 text-center text-blue-700 bg-blue-300 border rounded-md shadow-md cursor-pointer border-blue hover:bg-blue-800 hover:text-white">
               <div className="text-base leading-normal">Take a photo</div>
               <input type="file" id="photo-file" capture="environment" accept="image/*" className="hidden" value={photo} onChange={(e)=>{
                 console.log(e.target.files[0])
