@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import {useEffect, useState} from 'react'
 import { Tab } from '@headlessui/react'
-import moment from 'moment'
+import moment, { now } from 'moment'
 
 export default function Home() {
 
@@ -57,7 +57,8 @@ export default function Home() {
                   name: e.target.files[0].name,
                   size: e.target.files[0].size,
                   type: e.target.files[0].type,
-                  file: e.target.value
+                  file: e.target.value,
+                  selectedOn: now()
                 })
   
                 let blobURL = URL.createObjectURL(e.target.files[0]);
@@ -71,6 +72,7 @@ export default function Home() {
               <div>name</div><div className="break-all">{videoMeta?.name}</div>
               <div>size</div><div className="break-all">{videoMeta?.size}</div>
               <div>type</div><div className="break-all">{videoMeta?.type}</div>
+              <div>selectedOn</div><div className="break-all">{videoMeta?.selectedOn ? moment(videoMeta?.selectedOn).format("DD.MM.YYYY - HH:mm:ss"): ""}</div>
               <div className="col-span-2 border">
               <video width="320" height="240" controls src={blobUrl}  className="mx-auto">
                 Your browser does not support the video tag.
@@ -105,7 +107,8 @@ export default function Home() {
                   name: e.target.files[0].name,
                   size: e.target.files[0].size,
                   type: e.target.files[0].type,
-                  file: e.target.value
+                  file: e.target.value,
+                  selectedOn: now()
                 })
                 let photoURL = URL.createObjectURL(e.target.files[0]);
                 setPhotoUrl(photoURL)
@@ -118,6 +121,7 @@ export default function Home() {
               <div>name</div><div className="break-all">{photoMeta?.name}</div>
               <div>size</div><div className="break-all">{photoMeta?.size}</div>
               <div>type</div><div className="break-all">{photoMeta?.type}</div>
+              <div>selectedOn</div><div className="break-all">{photoMeta?.selectedOn ? moment(photoMeta?.selectedOn).format("DD.MM.YYYY - HH:mm:ss"): ""}</div>
               <div className="col-span-2 border" height="240">
               <img width="320" height="240" src={photoUrl} className="mx-auto"></img>
               </div>
