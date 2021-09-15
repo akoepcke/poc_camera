@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import {useState} from 'react'
 import { Tab } from '@headlessui/react'
+import moment from 'moment'
 
 export default function Home() {
 
@@ -66,11 +67,12 @@ export default function Home() {
   
             <div className="grid grid-cols-[1fr,auto] gap-2">
               <div>lastModified</div><div>{videoMeta?.lastModified}</div>
+              <div>lastModifiedFormat</div><div>{videoMeta?.lastModified ? moment(videoMeta?.lastModified).format("DD.MM.YYYY - HH:mm:ss"): ""}</div>
               <div>name</div><div>{videoMeta?.name}</div>
               <div>size</div><div>{videoMeta?.size}</div>
               <div>type</div><div>{videoMeta?.type}</div>
               <div className="col-span-2 border">
-              <video width="320" height="240" controls src={blobUrl}>
+              <video width="320" height="240" controls src={blobUrl}  className="mx-auto">
                 Your browser does not support the video tag.
               </video>
               </div>
@@ -112,11 +114,12 @@ export default function Home() {
   
             <div className="grid grid-cols-[1fr,auto] gap-2">
               <div>lastModified</div><div>{photoMeta?.lastModified}</div>
+              <div>lastModifiedFormat</div><div>{photoMeta?.lastModified ? moment(photoMeta?.lastModified).format("DD.MM.YYYY - HH:mm:ss"): ""}</div>
               <div>name</div><div>{photoMeta?.name}</div>
               <div>size</div><div>{photoMeta?.size}</div>
               <div>type</div><div>{photoMeta?.type}</div>
               <div className="col-span-2 border" height="240">
-              <img width="320" height="240" src={photoUrl}></img>
+              <img width="320" height="240" src={photoUrl} className="mx-auto"></img>
               </div>
             </div>
          </div>
