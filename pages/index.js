@@ -5,12 +5,12 @@ import { Tab } from '@headlessui/react'
 export default function Home() {
 
   const [video, setVideo] = useState()
-  const [videoMeta, setVideoMeta] = useState()
-  const [blobUrl, setBlobUrl] = useState()
+  const [videoMeta, setVideoMeta] = useState({})
+  const [blobUrl, setBlobUrl] = useState("")
 
   const [photo, setPhoto] = useState()
-  const [photoUrl, setPhotoUrl] = useState()
-  const [photoMeta, setPhotoMeta] = useState()
+  const [photoMeta, setPhotoMeta] = useState({})
+  const [photoUrl, setPhotoUrl] = useState("")
 
   return (
     <div>
@@ -35,7 +35,7 @@ export default function Home() {
             <div className="flex justify-between">
               <h1 className="text-lg font-bold">Video</h1>
               <button onClick={()=>{
-                setVideo(null)
+                setVideo()
                 setVideoMeta({})
                 setBlobUrl("")
               }}
@@ -82,7 +82,7 @@ export default function Home() {
           <div className="flex justify-between">
               <h1 className="text-lg font-bold">Photo</h1>
               <button onClick={()=>{
-                setPhoto(null)
+                setPhoto()
                 setPhotoMeta({})
                 setPhotoUrl("")
               }}
